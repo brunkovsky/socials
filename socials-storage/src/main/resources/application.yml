@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: socials-storage
+  config:
+    import: "optional:configserver:http://localhost:8888"
+  profiles:
+    active: local
+
+server:
+  port: 8081
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  info:
+    env:
+      enabled: true
+
+logging:
+  level:
+    org:
+      elasticsearch:
+        client: ERROR
+      example:
+        main:
+          service: DEBUG
+
+info:
+  app:
+    name: @project.name@
+    artifactId: @project.artifactId@
+    version: @project.version@
+    description: @project.description@
+
+socials:
+  name1: S556-
+  name2: A77-

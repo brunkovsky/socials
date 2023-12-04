@@ -1,0 +1,4 @@
+spring:
+  elasticsearch:
+    rest:
+      uris: "http://ranok.duckdns.org:9200"

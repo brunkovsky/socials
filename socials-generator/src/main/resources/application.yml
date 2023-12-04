@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: socials-generator
+  config:
+    import: "optional:configserver:http://localhost:8888"
+  profiles:
+    active: local
+  data:
+    rest:
+      basePath: "/api/socials/generator"
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    env:
+      post:
+        enabled: true
+
+logging:
+  level:
+    org:
+      elasticsearch:
+        client: ERROR
+    com:
+      nkoad:
+        wallbler:
+          main:
+            service: DEBUG
+
+info:
+  app:
+    name: "Socials Generator module"
+    description: "The module intended to generate RabbitMQ impulses (messages) for socials executors"
+
+socials:
+  rabbit:
+    exchange:
+      executor:
+        name: socials-executor
+      token-refresher:
+        name: socials-token-refresher

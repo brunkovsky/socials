@@ -1,0 +1,5 @@
+# Project exclude paths
+/socials-configserver/target/
+/socials-discovery-service/target/
+/socials-generator/target/
+/socials-storage/target/

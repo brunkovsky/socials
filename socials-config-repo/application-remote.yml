@@ -1,0 +1,6 @@
+spring:
+  rabbitmq:
+    host: "ranok.duckdns.org"
+    port: 5672
+    username: stas
+    password: 141292
