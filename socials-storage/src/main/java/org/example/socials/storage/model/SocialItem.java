@@ -2,6 +2,7 @@ package org.example.socials.storage.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.DateFormat;
@@ -13,10 +14,11 @@ import java.io.Serializable;
 import java.time.Instant;
 
 @Data
+@EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
 @Document(indexName = "socials", createIndex = true) // @Document? to replace to @Entity ?
-public class SocialItem implements Serializable {
+public class SocialItem implements Serializable {  // TODO: to check 'implements Serializable'
 
     @Id
     private String id;

@@ -16,7 +16,6 @@ public abstract class CommonSchedulerGenerator<T extends CommonScheduleRepositor
     @Autowired
     private MessagePostProcessor messagePostProcessor;
 
-
     protected T commonScheduleRepository;
 
     protected abstract Logger getLog();

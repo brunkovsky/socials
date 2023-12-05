@@ -1,5 +1,6 @@
 package org.example.socials.generator.scheduler;
 
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.example.socials.generator.repository.ExecutorSchedulerRepository;
 import org.slf4j.Logger;
@@ -12,12 +13,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class ExecutorSchedulerGenerator extends CommonSchedulerGenerator<ExecutorSchedulerRepository> {
 
-    private final String exchangeName;
+    @Setter
+    @Value("${socials.rabbit.exchange.executor.name}")
+    private String exchangeName;
 
-    public ExecutorSchedulerGenerator(ExecutorSchedulerRepository executorRepository,
-                                      @Value("${socials.rabbit.exchange.executor.name}") String exchangeName) {
+    public ExecutorSchedulerGenerator(ExecutorSchedulerRepository executorRepository) {
         super.commonScheduleRepository = executorRepository;
-        this.exchangeName = exchangeName;
     }
 
 

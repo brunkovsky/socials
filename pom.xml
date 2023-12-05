@@ -43,10 +43,11 @@
 	</dependencyManagement>
 
 	<modules>
-		<module>socials-configserver</module>
+		<module>socials-config-server</module>
 		<module>socials-discovery-service</module>
 		<module>socials-generator</module>
 		<module>socials-storage</module>
+		<module>socials-api-gateway</module>
 	</modules>
 
 </project>

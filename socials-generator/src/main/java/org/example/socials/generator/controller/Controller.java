@@ -3,10 +3,9 @@ package org.example.socials.generator.controller;
 import lombok.AllArgsConstructor;
 import org.example.socials.generator.service.GeneratorService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 @RestController
 @AllArgsConstructor
@@ -20,6 +19,14 @@ public class Controller {
     @PostMapping("/executor/{exchange}")
     public void forceExecute(@PathVariable("exchange") String exchange) {
         service.forceExecute(exchange);
+    }
+
+
+    @GetMapping("/redirect")
+    public void forceExecute(@RequestParam Map<String,String> allRequestParams) {
+        System.out.println("========");
+        System.out.println(allRequestParams);
+        System.out.println("========");
     }
 
 }

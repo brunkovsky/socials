@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: socials-api-gateway
+  config:
+    import: "optional:configserver:http://localhost:8888"
+  profiles:
+    active: local
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: "http://localhost:8761/eureka"
+
+server:
+  port: 8070
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    env:
+      post:
+        enabled: true
+
+info:
+  app:
+    name: "Socials Api-Gateway module"

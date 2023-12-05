@@ -29,10 +29,10 @@ logging:
 
 info:
   app:
-    name: @project.name@
-    artifactId: @project.artifactId@
-    version: @project.version@
-    description: @project.description@
+    name: ^project.name^
+    artifactId: ^project.artifactId^
+    version: ^project.version^
+    description: ^project.description^
 
 socials:
   name1: S556-
